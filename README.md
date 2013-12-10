@@ -1,0 +1,3 @@
+NMC
+===
+Nagios Management Console
