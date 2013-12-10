@@ -262,17 +262,17 @@ function popup(form) {
 </ul>
 
 <div id="tabs-1">
-		<iframe src="http://10.134.47.1/NMC/jTableSimple.php" name="POS" width="1760" height="900">
+		<iframe src="http://192.168.10.10/jTableSimple.php" name="POS" width="1760" height="900">
 		</iframe>
 
 </div>
 <div id="tabs-2">
-		<iframe src="http://10.134.47.1/NMC/jTableSimple.php" name="Deleted" width="1760" height="900">
+		<iframe src="http://192.168.10.10/jTableSimple.php" name="Deleted" width="1760" height="900">
 		</iframe>
 
 </div>
 <div id="tabs-3">
-		<iframe src="http://10.134.47.1/NMC/jTableSimple.php" name="Changes" width="1760" height="900">
+		<iframe src="http://192.168.10.10/jTableSimple.php" name="Changes" width="1760" height="900">
 		</iframe>
 
 </div>

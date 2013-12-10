@@ -42,10 +42,10 @@ require_once('engine.php');
 									if ($_SESSION['session_prv_POS_VIEW'] == "Y")
 									{
 									?>
-									<a class="gn-icon gn-icon-download" href="http://10.134.47.1/NMC/POS.php?select=allop">POS</a>
+									<a class="gn-icon gn-icon-download" href="http://192.168.10.10/POS.php?select=allop">POS</a>
 								
-										<li><a class="gn-icon gn-icon-illustrator" href="http://10.134.47.1/NMC/POS.php?select=delall">Deleted POS Items</a></li>
-										<li><a class="gn-icon gn-icon-photoshop" href="http://10.134.47.1/NMC/POS.php?select=histall">History /Changes</a></li>
+										<li><a class="gn-icon gn-icon-illustrator" href="http://192.168.10.10/POS.php?select=delall">Deleted POS Items</a></li>
+										<li><a class="gn-icon gn-icon-photoshop" href="http://192.168.10.10/POS.php?select=histall">History /Changes</a></li>
 									
 									<?php
 									}
@@ -60,7 +60,7 @@ require_once('engine.php');
 				</li>
 		
 				
-				<li><a class="codrops-icon codrops-icon-drop" href="http://10.134.47.1/NMC/index.php"><span><?php echo ($_SESSION['session_NAME'].' '.	$_SESSION['session_SURNAME']); ?></span></a></li>
+				<li><a class="codrops-icon codrops-icon-drop" href="http://192.168.10.10/index.php"><span><?php echo ($_SESSION['session_NAME'].' '.	$_SESSION['session_SURNAME']); ?></span></a></li>
 			</ul>
 			<header>
 				<h1>Nagios Management Console <span>Use this tool to manage Nagios Inventory</span></h1>			
@@ -86,7 +86,7 @@ require_once('engine.php');
 						<div class="gn-scroller">
 							<ul class="gn-menu">
 							<li><a class="codrops-icon codrops-icon-drop" href="index.php?sign=1"><span>Sign In</span></a></li>
-							<li><a class="gn-icon gn-icon-download" href="http://10.134.47.1/NMC/">Home</a></li>
+							<li><a class="gn-icon gn-icon-download" href="http://192.168.10.10/">Home</a></li>
 							</ul>
 						</div><!-- /gn-scroller -->
 					</nav>

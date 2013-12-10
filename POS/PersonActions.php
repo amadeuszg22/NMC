@@ -152,20 +152,20 @@ else	if($_GET["action"] == "listpos")
 		$resultMEM = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'Memory Usage','UP','-','-')");
 		$resultCPU = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'CPU Load','UP','-','-')");
 			
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=PC&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=PC&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="VRRP")
 		{
 		$resultPING = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'PING','UP','-','-')");		
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=VRRP&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=VRRP&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="Pinpad")
 		{
 		$resultPING = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'PING','UP','-','-')");
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=Pinpad&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=Pinpad&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="Primary router 3G")
@@ -173,7 +173,7 @@ else	if($_GET["action"] == "listpos")
 		$resultPING = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'PING','UP','-','-')");
 		$resultSignal = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'Signal Strength','UP','-','-')");
 		$resultGre = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'GRE Status','UP','-','-')");	
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=PR3G&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=PR3G&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="Primary router CDMA")
@@ -191,7 +191,7 @@ else	if($_GET["action"] == "listpos")
 		else if ( $_POST["POS_DEV_TYPE"] =="Primary router DSL")
 		{
 		$resultPING = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'PING','UP','-','-')");
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=PDSL&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=PDSL&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="Secondary router 3G")
@@ -199,7 +199,7 @@ else	if($_GET["action"] == "listpos")
 		$resultPING = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'PING','UP','-','-')");
 		$resultSignal = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'Signal Strength','UP','-','-')");
 		$resultGre = mysql_query("INSERT INTO `NAGIOS_POS_SERV`(`POS_DEV_ID`, `POS_SERV_ID`, `POS_SERV_TYPE`, `POS_SERV_STATUS`, `POS_SERV_OUTPUT`, `POS_SERV_Date`) VALUES ((SELECT `POS_DEV_ID` FROM `NAGIOS_POS_DEV` WHERE `POS_ID` = '" . $_POST["POS_ID"]. "' AND `POS_DEV_TYPE` = '" . $_POST["POS_DEV_TYPE"]. "'),NULL,'GRE Status','UP','-','-')");	
-		$Nagios = file_get_contents('http://10.134.47.1/NMC/POS/Nagios_int?sel=SR3G&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
+		$Nagios = file_get_contents('http://192.168.10.10/POS/Nagios_int?sel=SR3G&so='.$_GET["SO_ID"].'&posid='.$_POST["POS_ID"].'');
 		}
 		
 		else if ( $_POST["POS_DEV_TYPE"] =="Secondary router CDMA")
