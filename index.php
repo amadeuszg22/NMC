@@ -99,7 +99,7 @@ require_once('engine.php');
 				<h1>Nagios Management Console <span>Use this tool to manage Nagios Inventory</span></h1>			
 			</header>
 
-			<center><h1>Wlecome in Nagios Management Console!!</h1>
+			<center><h1>Wlecome to Nagios Management Console!!</h1>
 			<?php
 			if (isset($_GET['sign']))
 			{
@@ -235,10 +235,10 @@ require_once('engine.php');
 		$dbu = new mysql('root','Q','Nagios_Inventory','localhost');
 		$datau = $dbu->addusr($_POST['login'],$pass,$_POST['name'],$_POST['sname'],$_POST['email'],$_POST['group'],$now);
 		$datag = $dbu->addusrgr($_POST['login'],$_POST['group']);
-		$c = "sendEmail -s 10.134.27.1:25 -t amadeusz.grabowski@kapsch.net -f NMC@viatoll.pl -u 'New User Registred please activate' -m 'You Have New Accout in system \n\nUser Login:'".$_POST['login']."' \nUser name:'".$_POST['name']."' \n User surname:'".$_POST['sname']."' \n User email:'".$_POST['email']."'\n Group:'".$_POST['group']."' \n\n Please activate! '";
-		$mail = system($c);
-		$c2 = "sendEmail -s 10.134.27.1:25 -t '".$_POST['email']."' -f NMC@viatoll.pl -u 'New User Registred wait for activation' -m 'Account successfully created \n\nUser Login:'".$_POST['login']."' \nUser name:'".$_POST['name']."' \n User surname:'".$_POST['sname']."' \n User email:'".$_POST['email']."'\n Group:'".$_POST['group']."' \n\n Please wait for activation by admin! '";
-		$mail2 = system($c2);
+		#$c = "sendEmail -s 10.134.27.1:25 -t amadeusz.grabowski@kapsch.net -f NMC@viatoll.pl -u 'New User Registred please activate' -m 'You Have New Accout in system \n\nUser Login:'".$_POST['login']."' \nUser name:'".$_POST['name']."' \n User surname:'".$_POST['sname']."' \n User email:'".$_POST['email']."'\n Group:'".$_POST['group']."' \n\n Please activate! '";
+		#$mail = system($c);
+		#$c2 = "sendEmail -s 10.134.27.1:25 -t '".$_POST['email']."' -f NMC@viatoll.pl -u 'New User Registred wait for activation' -m 'Account successfully created \n\nUser Login:'".$_POST['login']."' \nUser name:'".$_POST['name']."' \n User surname:'".$_POST['sname']."' \n User email:'".$_POST['email']."'\n Group:'".$_POST['group']."' \n\n Please wait for activation by admin! '";
+		#$mail2 = system($c2);
 		header('location: index.php'); 
 		echo "OK Registration Successfull! Wait for Activation By Administrator";
 		
